@@ -1,1 +1,74 @@
+# Bai1
+class Employee:
+    def __init__(obj, name, position):
+        obj.name = name
+        obj.position = position
+    def say_hi(obj):
+        print("Hi, my name is", obj.name)
+    def tell_position(obj):
+        print("I am a", obj.position)
+
+john = Employee("John", "Software Engineer")
+john.say_hi()
+john.tell_position()
+
+#Bai2
+
+class rectangle:
+    def caculate(obj, height, width):
+        obj.height = height
+        obj.width = width
+        print("Permimeter:", (height+width)*2)
+        print("Area:", height*width)
+class circle:
+    def caculate(obj, radius):
+        obj.radius = radius
+        print("Perimeter:", 3.14*obj.radius*2)
+        print("Area:", obj.radius**2*3.14)
+var = 0
+x = 0
+y = 0
+shape = input("Shape (rectangle|circle): ")
+if shape == "rectangle":
+    var = rectangle()
+    x = int(input("Height: "))
+    y = int(input("Width: "))
+    var.caculate(x,y)
+elif shape == "circle":
+   var = circle()
+   x = int(input("Radius: "))
+   var.caculate(x)
+else:
+    print("Invalid!")
+
+#Bai3
+from datetime import datetime
+now = datetime.now()
+
+class Customdate:
+    Date = now.strftime("%d/%m/%Y")
+    Time = now.strftime("%H:%M:%S")
+    def get_date(cls):
+        return cls.Date
+    def get_time(cls):
+        return cls.Time
+
+now = Customdate()
+print(now.get_date())
+print(now.get_time())
+
+#Bai4
+from datetime import datetime
+class DateHandler:
+    def format_date(date):
+        return date.strftime("%d/%m/%Y")
+    def get_days_between(date1, date2):
+        minus = date2 - date1
+        return minus.days
+
+start_date = datetime(2021, 1, 1)
+end_date = datetime(2022, 1, 1)
+print("Start:", DateHandler.format_date(start_date))
+print("End:", DateHandler.format_date(end_date))
+print("Days between:", DateHandler.get_days_between(start_date, end_date))
 
