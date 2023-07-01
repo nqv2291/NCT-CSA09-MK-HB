@@ -1,0 +1,66 @@
+# Bai 1
+class Employee:
+    def __init__(self, employee_name, position):
+        self.employee_name = employee_name
+        self.position = position
+    def say_hi(self):
+        print(f'Hi, my name is {self.employee_name}')
+    def tell_position(self):
+        print(f'I am a {self.position}')
+John = Employee("John", "Software Engineer")
+John.say_hi()
+John.tell_position()
+
+# Bai 2
+class Rectangle:
+    def chu_vi(self, height, width):
+        print(f"Chu vi la: {(height+width)*2}")
+    def dien_tich(self, height, width):
+        print(f"Dien tich la: {height*width}")
+class Circle:
+    def chu_vi(self, radius):
+        print(f"Chu vi la: {radius*2*3.14}")
+    def dien_tich(self, radius):
+        print(f"Dien tich la: {radius*radius*3.14}")
+
+shape = str(input("Enter a shape: "))
+if shape == "rectangle":
+    height = int(input("Height: "))
+    width = int(input("Width: "))
+    shape = Rectangle()
+    shape.chu_vi(height, width)
+    shape.dien_tich(height, width)
+else:
+    radius = int(input("Radius: "))
+    shape = Circle()
+    shape.chu_vi(radius)
+    shape.dien_tich(radius)
+
+# Bai 3
+from datetime import datetime
+now = datetime.now()
+class CustomDate:
+        def __init__(self):
+                self.date = now.strftime("%d/%m/%Y")
+                self.time = now.strftime("%H:%M:%S")
+        def get_date(self):
+                print(self.date)
+        def get_time(self):
+                print(self.time)
+
+time = CustomDate()
+time.get_date()
+time.get_time()
+
+# Bai 4
+from datetime import datetime
+class DateHandler:
+        def format_date(datetime):
+                return datetime.strftime("%d/%m/%Y")
+        def get_days_between(date1, date2):
+                return (date2-date1).days
+start_date = datetime(2021, 1, 1)
+end_date = datetime(2022, 1, 1)
+print("Start: "+DateHandler.format_date(start_date))
+print("End: "+DateHandler.format_date(end_date))
+print(f"Days between: {DateHandler.get_days_between(start_date, end_date)}")
